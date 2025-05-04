@@ -15,7 +15,7 @@ const products = [
     title: "E-Book Completo: Criação de Conteúdo Engajado de Psicologia",
     coupon: "PRIMEIRACOMPRA",
     image: "/img/ebookInsta.jpg",
-    link: "https://pay.kiwify.com.br/mN24Ugl",
+    link: "https://pay.kiwify.com.br/45BIqPh",
     description: "Aprenda a se destacar nas redes com conteúdo de valor."
   },
   {
