@@ -8,13 +8,13 @@ const services = [
     title: "Psicoterapia Individual",
     icon: Heart,
     description: "Espaço seguro para fortalecer o autoconhecimento e melhorar seu bem-estar emocional.",
-    image: "src/img/atendon.jpg",
+    image: "/img/atendon.jpg",
   },
   {
     title: "Psicoterapia de Casal",
     icon: Users,
     description: "Auxílio para fortalecer vínculos, melhorar a comunicação e resolver conflitos.",
-    image: "src/img/atendcasal.jpg",
+    image: "/img/atendcasal.jpg",
   },
   {
     title: "Psicoterapia para Adolescentes",

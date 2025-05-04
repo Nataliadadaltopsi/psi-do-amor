@@ -2,11 +2,11 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { PlayCircle, X } from 'lucide-react';
-import MarinaImg from '@/img/marina.jpeg';
-import JeniferImg from '@/img/jenifer.jpeg';
-import KarolineImg from '@/img/karoline.jpeg';
-import KissilaImg from '@/img/kissila.jpeg';
-import MilenaImg from '@/img/milena.jpeg';
+import MarinaImg from '/img/marina.jpeg';
+import JeniferImg from '/img/jenifer.jpeg';
+import KarolineImg from '/img/karoline.jpeg';
+import KissilaImg from '/img/kissila.jpeg';
+import MilenaImg from '/img/milena.jpeg';
 
 const team = [
   {
@@ -120,7 +120,7 @@ const About: React.FC = () => {
               viewport={{ once: true }}
             >
               <img
-                src="src/img/nat1.jpeg"
+                src="/img/nat1.jpeg"
                 alt="Fundadora Natalia Dadalto"
                 className="w-full md:w-[500px] h-auto md:h-[750px] object-contain mx-auto rounded-2xl shadow-lg"
                 />

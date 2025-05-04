@@ -19,17 +19,17 @@ import {
 // Carrossel de banners
 const bannerSlides = [
   {
-    image: "src/img/clinica_1.jpeg",
+    image: "/img/clinica_1.jpeg",
     alt: "Banner da Clínica",
     link: "https://psidoamor.com.br",
   },
   {
-    image: "src/img/banner2.jpeg",
+    image: "/img/banner2.jpeg",
     alt: "Podcast no Spotify",
     link: "https://open.spotify.com/show/3Du0MDmFGJWU5mtQBhcDOH",
   },
   {
-    image: "src/img/banner3.jpeg",
+    image: "/img/banner3.jpeg",
     alt: "YouTube Psi do Amor",
     link: "https://www.youtube.com/@NataliaDadaltopsi",
   },
@@ -149,19 +149,19 @@ const Index: React.FC = () => {
               {
                 title: "Atendimento Humanizado",
                 desc: "Escuta ativa, apoio contínuo e um ambiente acolhedor.",
-                img: "src/img/nat3.jpeg",
+                img: "/img/nat3.jpeg",
                 alt: "Atendimento humanizado",
               },
               {
                 title: "Ambiente Acolhedor e Seguro",
                 desc: "Atendimento online com conforto e privacidade.",
-                img: "src/img/home_office.jpg",
+                img: "/img/home_office.jpg",
                 alt: "Ambiente aconchegante",
               },
               {
                 title: "Equipe Especializada",
                 desc: "Psicólogas com sólida formação e experiência clínica.",
-                img: "src/img/nat2.jpeg",
+                img: "/img/nat2.jpeg",
                 alt: "Equipe especializada",
               }
             ].map((b, i) => (

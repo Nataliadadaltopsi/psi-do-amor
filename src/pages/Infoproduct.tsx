@@ -5,7 +5,7 @@ const products = [
   {
     id: 1,
     title: "E-Book: Relação Saudável Não é Sorte: É Técnica",
-    image: "src/img/ebook.jpg",
+    image: "/img/ebook.jpg",
     link: "https://pay.kiwify.com.br/mN24Ugl",
     isNew: true,
     description: "Guia com técnicas baseadas em psicologia para relações melhores."
@@ -14,28 +14,28 @@ const products = [
     id: 2,
     title: "E-Book Completo: Criação de Conteúdo Engajado de Psicologia",
     coupon: "PRIMEIRACOMPRA",
-    image: "src/img/ebookInsta.jpg",
+    image: "/img/ebookInsta.jpg",
     link: "https://pay.kiwify.com.br/mN24Ugl",
     description: "Aprenda a se destacar nas redes com conteúdo de valor."
   },
   {
     id: 3,
     title: "Baralho: 100 Perguntas para mergulhar em autoconhecimento",
-    image: "src/img/baralhoA.jpg",
+    image: "/img/baralhoA.jpg",
     link: "https://pay.kiwify.com.br/9bqkkdF",
     description: "Ferramenta terapêutica para refletir e se conhecer melhor."
   },
   {
     id: 4,
     title: "Baralho para Casais: 100 Perguntas para aprofundar a relação ❤️📩",
-    image: "src/img/baralhoC.jpg",
+    image: "/img/baralhoC.jpg",
     link: "https://pay.kiwify.com.br/hCVMQAE",
     description: "Construa mais conexão e comunicação com seu par."
   },
   {
     id: 5,
     title: "Curso Livre de Ciúmes",
-    image: "src/img/curso_livreC.jpg",
+    image: "/img/curso_livreC.jpg",
     link: "https://pay.kiwify.com.br/HmB8M9p",
     description: "Transforme o ciúme em autoconfiança e segurança emocional."
   }

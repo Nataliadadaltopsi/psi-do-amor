@@ -121,7 +121,7 @@ const socialCards: SocialCardProps[] = [
     handle: "@clinicapsidoamor",
     href: "https://www.instagram.com/clinicapsidoamor/",
     icon: <Instagram className="h-6 w-6 text-[#C13584]" />,
-    imageSrc: "/src/img/instagram.png",
+    imageSrc: "/img/instagram.png",
     color: "#C13584",
     orientation: "horizontal",
   },
@@ -130,7 +130,7 @@ const socialCards: SocialCardProps[] = [
     handle: "Psi do Amor",
     href: "https://www.youtube.com/@NataliaDadaltopsi/featured",
     icon: <Youtube className="h-6 w-6 text-red-600" />,
-    imageSrc: "/src/img/youtube.png",
+    imageSrc: "/img/youtube.png",
     color: "#FF0000",
     orientation: "horizontal",
   },
@@ -139,7 +139,7 @@ const socialCards: SocialCardProps[] = [
     handle: "Spotify",
     href: "https://open.spotify.com/show/3Du0MDmFGJWU5mtQBhcDOH",
     icon: <i className="fa-brands fa-spotify text-green-600 text-xl" />,
-    imageSrc: "/src/img/spotify.jpg",
+    imageSrc: "/img/spotify.jpg",
     color: "#1DB954",
     orientation: "vertical", // <- importante
   },
@@ -148,7 +148,7 @@ const socialCards: SocialCardProps[] = [
     handle: "@clinicapsidoamor",
     href: "https://www.tiktok.com/@clinicapsidoamor",
     icon: <i className="fa-brands fa-tiktok text-black text-xl" />,
-    imageSrc: "/src/img/tiktok.png", // ajuste se o path for diferente
+    imageSrc: "/img/tiktok.png", // ajuste se o path for diferente
     color: "#000000",
     orientation: "horizontal",
   },
@@ -157,17 +157,17 @@ const socialCards: SocialCardProps[] = [
 const kiwifyProducts = [
   {
     name: "Curso 1",
-    image: "/src/img/infoproduto1.png",
+    image: "/img/infoproduto1.png",
     href: "https://kiwify.com.br/produto1",
   },
   {
     name: "Curso 2",
-    image: "/src/img/infoproduto2.png",
+    image: "/img/infoproduto2.png",
     href: "https://kiwify.com.br/produto2",
   },
   {
     name: "Curso 3",
-    image: "/src/img/infoproduto3.png",
+    image: "/img/infoproduto3.png",
     href: "https://kiwify.com.br/produto3",
   },
 ];

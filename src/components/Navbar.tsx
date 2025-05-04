@@ -15,7 +15,7 @@ const Navbar = () => {
       <div className="container mx-auto px-4">
         <div className="flex justify-between items-center h-16">
           <Link to="/" className="flex items-center" onClick={scrollToTop}>
-            <img src="src/img/logo2.jpeg" alt="Psi do Amor" className="h-10" />
+            <img src="/img/logo2.jpeg" alt="Psi do Amor" className="h-10" />
           </Link>
 
           {/* Mobile menu button */}

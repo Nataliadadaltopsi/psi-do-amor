@@ -30,7 +30,7 @@ const Contact: React.FC = () => {
               handle="@clinicapsidoamor"
               href="https://www.instagram.com/clinicapsidoamor/"
               icon={<Instagram className="h-6 w-6 text-[#C13584]" />}
-              imageSrc="/src/img/instagram.png"
+              imageSrc="/img/instagram.png"
               color="#C13584"
             />
 
@@ -40,7 +40,7 @@ const Contact: React.FC = () => {
               handle="Psi do Amor"
               href="https://www.youtube.com/@NataliaDadaltopsi/featured"
               icon={<Youtube className="h-6 w-6 text-red-600" />}
-              imageSrc="/src/img/youtube.png"
+              imageSrc="/img/youtube.png"
               color="red"
             />
 
@@ -50,7 +50,7 @@ const Contact: React.FC = () => {
               handle="Spotify"
               href="https://open.spotify.com/show/3Du0MDmFGJWU5mtQBhcDOH"
               icon={<i className="fa-brands fa-spotify text-green-600 text-xl" />}
-              imageSrc="/src/img/spotify.png"
+              imageSrc="/img/spotify.png"
               color="#1DB954"
             />
 

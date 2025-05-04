@@ -27,7 +27,7 @@ const Index = () => {
           </div>
           <div className="hidden md:block relative h-[400px] rounded-lg overflow-hidden shadow-2xl">
             <img
-              src="src/img/clinica.jpeg"
+              src="/img/clinica.jpeg"
               alt="Ambiente acolhedor da clínica"
               className="w-full h-full object-cover"
             />
