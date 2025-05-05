@@ -43,31 +43,31 @@ const services = [
     title: "Ciúmes Excessivo",
     icon: AlertTriangle,
     description: "Trabalho terapêutico para lidar com inseguranças e fortalecer a confiança em si e no outro.",
-    image: "https://unsplash.com/photos/Fv125uBYKDI/download?force=true",
+    image: "/img/ciumes.png",
   },
   {
     title: "Controle nas Relações",
     icon: UserCheck,
     description: "Compreensão e mudança de padrões de controle que afetam os relacionamentos.",
-    image: "https://unsplash.com/photos/jrwZUfUBwgs/download?force=true",
+    image: "/img/controle.png",
   },
   {
     title: "Baixa Autoestima",
     icon: EmojiSad,
     description: "Resgate da autoestima e fortalecimento do amor-próprio.",
-    image: "https://unsplash.com/photos/XSMvOLi_tR0/download?force=true",
+    image: "/img/baixa_auto.png",
   },
   {
     title: "Insegurança",
     icon: EyeOff,
     description: "Desenvolvimento da autoconfiança e construção de segurança emocional.",
-    image: "https://unsplash.com/photos/bh8QqUKIcPQ/download?force=true",
+    image: "/img/inseguranca.png",
   },
   {
     title: "Traumas do Passado",
     icon: Brain,
     description: "Processamento e cura de experiências dolorosas que ainda impactam sua vida.",
-    image: "https://unsplash.com/photos/3nGGkh99D_g/download?force=true",
+    image: "/img/traumas.png",
   },
   {
     title: "Questões Familiares",
@@ -141,7 +141,7 @@ const Services: React.FC = () => (
               viewport={{ once: true }}
             >
               {/* Image */}
-              <div className="w-full h-48 mb-6">
+              <div className="w-full h-64 mb-6">
                 <img
                   src={svc.image}
                   alt={svc.title}
