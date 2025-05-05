@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { User, Users, Group, Video, ArrowRight } from "lucide-react";
+import { User, Users, HeartCrack, EyeOff, ArrowRight } from "lucide-react";
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay, Pagination, Navigation } from 'swiper/modules';
 import 'swiper/css';
@@ -47,32 +47,32 @@ const services = [
     icon: Users,
   },
   {
-    title: "Psicoterapia para Adolescentes",
-    description: "Apoio emocional para os desafios da juventude.",
-    icon: Group,
+    title: "Dependência Emocional",
+    description: "Apoio para restaurar sua autonomia emocional.",
+    icon: HeartCrack,
   },
   {
-    title: "Atendimento Online",
-    description: "Sessões virtuais no conforto da sua casa.",
-    icon: Video,
+    title: "Ciúmes Excessivo",
+    description: "Compreensão e controle de comportamentos possessivos.",
+    icon: EyeOff,
   },
 ];
 
 const testimonials = [
   {
-    text: "Senti acolhimento desde a primeira sessão. A equipe é incrível!",
+    text: "Gostei muito! Me senti acolhida com sensibilidade e qualificação!!",
     author: "Paciente da Psi do Amor",
   },
   {
-    text: "Encontrei apoio e orientação para superar um momento difícil.",
+    text: "Encontrei apoio e orientação para superar um momento difícil. Fui muito bem acolhida, amei!",
     author: "Paciente da Psi do Amor",
   },
   {
-    text: "A terapia me ajudou a reconectar comigo mesma. Recomendo muito!",
+    text: "Oie boa tarde!! Eu me senti muito bem e acolhida, e gostei muito da Psi Milena!",
     author: "Paciente da Psi do Amor",
   },
   {
-    text: "Aqui me senti ouvido de verdade. Transformador!",
+    text: "Aqui me senti ouvido de verdade. Foi ótimo, me senti muito melhor!",
     author: "Paciente da Psi do Amor",
   },
 ];
@@ -134,7 +134,7 @@ const Index: React.FC = () => {
               Nossa missão é acolher você em todos os aspectos
             </h2>
             <p className="mt-4 text-lg text-gray-700 max-w-2xl">
-              Acreditamos que cada passo de autoconhecimento deve ser seguro, humano e feito sob medida. Por isso unimos ciência, escuta empática e prática clínica de ponta.
+              Acreditamos que cada passo de autoconhecimento deve ser seguro e feito sob medida. Por isso unimos ciência, escuta empática e prática clínica de ponta.
             </p>
             <Button asChild className="mt-8 bg-[#8A1C1C] hover:bg-[#4C0B18] text-white px-6 py-3 rounded-xl text-lg">
               <Link to="/sobre">
@@ -161,7 +161,7 @@ const Index: React.FC = () => {
               {
                 title: "Equipe Especializada",
                 desc: "Psicólogas com sólida formação e experiência clínica.",
-                img: "/img/nat2.jpeg",
+                img: "/img/nat4.jpg",
                 alt: "Equipe especializada",
               }
             ].map((b, i) => (

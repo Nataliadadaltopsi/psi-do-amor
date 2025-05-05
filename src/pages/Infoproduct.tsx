@@ -60,11 +60,13 @@ export default function Infoproduct() {
                   Novo
                 </span>
               )}
-              <img
-                src={product.image}
-                alt={product.title}
-                className="w-full h-44 rounded-xl object-cover"
-              />
+              <div className="w-full h-56 flex items-center justify-center overflow-hidden rounded-xl bg-white">
+                <img
+                  src={product.image}
+                  alt={product.title}
+                  className="h-full object-contain"
+                />
+              </div>
               <div className="flex-1 flex flex-col justify-between">
                 <div>
                   <p className="text-lg font-bold text-[#2c2c2c]">{product.title}</p>

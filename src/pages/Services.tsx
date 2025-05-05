@@ -1,44 +1,115 @@
 // src/pages/Services.tsx
 import React from "react";
 import { motion } from "framer-motion";
-import { Heart, Users, Laptop, Smile, Brain } from "lucide-react"; // Ícones adicionados
+import { EmojiSad } from 'heroicons-react';
+import {
+  Heart,
+  Users,
+  Laptop,
+  Smile,
+  Brain,
+  Shield,
+  AlertTriangle,
+  UserCheck,
+  MessageCircle,
+  UserX,
+  EyeOff,
+  Zap,
+  BookOpen,
+  Lock,
+  Mic,
+} from "lucide-react";
 
 const services = [
   {
-    title: "Psicoterapia Individual",
+    title: "Terapia Individual",
     icon: Heart,
     description: "Espaço seguro para fortalecer o autoconhecimento e melhorar seu bem-estar emocional.",
     image: "/img/atendon.jpg",
   },
   {
-    title: "Psicoterapia de Casal",
+    title: "Terapia de Casal",
     icon: Users,
-    description: "Auxílio para fortalecer vínculos, melhorar a comunicação e resolver conflitos.",
-    image: "/img/atendcasal.jpg",
+    description: "Auxílio para fortalecer vínculos, melhorar a comunicação e resolver conflitos amorosos.",
+    image: "/img/atendcasal.png",
   },
   {
-    title: "Psicoterapia para Adolescentes",
-    icon: Smile,
-    description: "Suporte emocional e acadêmico para enfrentar os desafios da adolescência.",
-    image: "https://plus.unsplash.com/premium_photo-1665990293319-fe271ebcb6f3?q=80&w=2069&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    title: "Dependência Emocional",
+    icon: Shield,
+    description: "Ajuda para desenvolver autonomia emocional e construir relações mais saudáveis.",
+    image: "/img/dependemoc.png",
   },
   {
-    title: "Atendimento Online",
-    icon: Laptop,
-    description: "A mesma qualidade do presencial, com a praticidade do online.",
-    image: "https://plus.unsplash.com/premium_photo-1664476315220-2b91172d29da?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    title: "Ciúmes Excessivo",
+    icon: AlertTriangle,
+    description: "Trabalho terapêutico para lidar com inseguranças e fortalecer a confiança em si e no outro.",
+    image: "https://unsplash.com/photos/Fv125uBYKDI/download?force=true",
   },
   {
-    title: "Psicoterapia Familiar",
-    icon: Users,
-    description: "Trabalho conjunto para melhorar o relacionamento familiar e resolver conflitos.",
-    image: "https://images.unsplash.com/photo-1529180979161-06b8b6d6f2be?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    title: "Controle nas Relações",
+    icon: UserCheck,
+    description: "Compreensão e mudança de padrões de controle que afetam os relacionamentos.",
+    image: "https://unsplash.com/photos/jrwZUfUBwgs/download?force=true",
   },
   {
-    title: "Psicoterapia para Ansiedade",
+    title: "Baixa Autoestima",
+    icon: EmojiSad,
+    description: "Resgate da autoestima e fortalecimento do amor-próprio.",
+    image: "https://unsplash.com/photos/XSMvOLi_tR0/download?force=true",
+  },
+  {
+    title: "Insegurança",
+    icon: EyeOff,
+    description: "Desenvolvimento da autoconfiança e construção de segurança emocional.",
+    image: "https://unsplash.com/photos/bh8QqUKIcPQ/download?force=true",
+  },
+  {
+    title: "Traumas do Passado",
     icon: Brain,
-    description: "Técnicas terapêuticas para lidar com ansiedade e melhorar a qualidade de vida.",
-    image: "https://images.unsplash.com/photo-1493836512294-502baa1986e2?q=80&w=2090&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    description: "Processamento e cura de experiências dolorosas que ainda impactam sua vida.",
+    image: "https://unsplash.com/photos/3nGGkh99D_g/download?force=true",
+  },
+  {
+    title: "Questões Familiares",
+    icon: Users,
+    description: "Entendimento e transformação das dinâmicas familiares conflituosas.",
+    image: "https://unsplash.com/photos/caO-kxzDYYE/download?force=true",
+  },
+  {
+    title: "Ansiedade",
+    icon: Zap,
+    description: "Técnicas e suporte para lidar com crises de ansiedade e pensamentos acelerados.",
+    image: "https://unsplash.com/photos/oUGDUTHjLCo/download?force=true",
+  },
+  {
+    title: "Depressão",
+    icon: Heart,
+    description: "Acolhimento para lidar com a tristeza profunda, resgatar a motivação e o prazer pela vida.",
+    image: "https://unsplash.com/photos/kYpc9W042Qc/download?force=true",
+  },
+  {
+    title: "Término ou Divórcio",
+    icon: UserX,
+    description: "Suporte emocional para enfrentar o fim de um relacionamento e recomeçar com equilíbrio.",
+    image: "https://unsplash.com/photos/CvUeazqiOrQ/download?force=true",
+  },
+  {
+    title: "Autoconhecimento",
+    icon: BookOpen,
+    description: "Exploração profunda de quem você é, seus valores, emoções e desejos.",
+    image: "https://unsplash.com/photos/9EZC-FfQQeI/download?force=true",
+  },
+  {
+    title: "Traição",
+    icon: Lock,
+    description: "Trabalho terapêutico para superar dores causadas por infidelidade e reconstruir a confiança.",
+    image: "https://unsplash.com/photos/3nGGkh99D_g/download?force=true",
+  },
+  {
+    title: "Comunicação Assertiva",
+    icon: Mic,
+    description: "Aprenda a se expressar com clareza e empatia, melhorando seus relacionamentos.",
+    image: "https://unsplash.com/photos/caO-kxzDYYE/download?force=true",
   },
 ];
 
@@ -49,9 +120,11 @@ const Services: React.FC = () => (
       <div className="space-y-4 text-center">
         <h2 className="text-5xl font-bold text-[#4C0B18]">Nossos Serviços</h2>
         <p className="mx-auto text-xl text-gray-700 max-w-2xl leading-relaxed">
-        Atendimento 100% online, feito por mulheres e para mulheres.</p>
+          Atendimento 100% online, feito por mulheres e para mulheres.
+        </p>
         <p className="mx-auto text-lg text-gray-700 max-w-2xl leading-relaxed">
-        Cuidamos da sua saúde emocional com empatia, acolhimento e segurança. </p>
+          Cuidamos da sua saúde emocional com empatia, acolhimento e segurança.
+        </p>
       </div>
 
       {/* Grid: 1 col on mobile, 2 on md+, 3 on lg+ */}
@@ -80,9 +153,7 @@ const Services: React.FC = () => (
               <div className="flex-1 flex flex-col items-start">
                 <div className="flex items-center gap-3 mb-4">
                   <Icon className="text-[#8A1C1C]" size={28} />
-                  <h3 className="text-2xl font-semibold text-[#4C0B18]">
-                    {svc.title}
-                  </h3>
+                  <h3 className="text-2xl font-semibold text-[#4C0B18]">{svc.title}</h3>
                 </div>
                 <p className="text-gray-700 text-base leading-relaxed mb-4">{svc.description}</p>
               </div>

@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { PlayCircle, X } from 'lucide-react';
-import MarinaImg from '/img/marina.jpeg';
+import MarinaImg from '/img/marina.jpg';
 import JeniferImg from '/img/jenifer.jpeg';
 import KarolineImg from '/img/karoline.jpeg';
 import KissilaImg from '/img/kissila.jpeg';
@@ -93,7 +93,7 @@ const About: React.FC = () => {
                 <h2 className="text-2xl font-semibold text-[#8A1C1C] mb-3">Nossa História</h2>
                 <p className="text-gray-700 mb-4">
                   A paixão por transformar vidas através do conhecimento científico e da experiência prática foi o que motivou a psicóloga <strong>Natália Dadalto</strong> a trilhar seu caminho.<br />
-                  Especializada em relacionamentos, Natália construiu uma trajetória sólida compartilhando, principalmente com mulheres, técnicas baseadas em ciência para viver relações mais saudáveis e equilibradas. <br /><br />
+                  Com foco em relacionamentos, Natália construiu uma trajetória sólida compartilhando, principalmente com mulheres, técnicas baseadas em ciência para viver relações mais saudáveis e equilibradas. <br /><br />
 
                   A partir do impacto positivo gerado em suas redes sociais, nasceu o desejo de ir além: criar um espaço onde outras mulheres pudessem encontrar apoio e acolhimento especializado.<br />
                   Assim surgiu a <span style={{ color: "#8A1C1C", fontWeight: "bold" }}>Clínica Psi do Amor</span>, uma clínica criada por uma mulher, com um time exclusivamente feminino de psicólogas, voltada para o fortalecimento da saúde emocional das mulheres, especialmente no campo dos relacionamentos.<br /><br />
