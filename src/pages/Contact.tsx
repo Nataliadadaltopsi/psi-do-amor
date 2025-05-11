@@ -39,31 +39,62 @@ const Contact: React.FC = () => {
             </div>
 
             <Swiper
-              modules={[Navigation, Autoplay]}
-              navigation
-              autoplay={{ delay: 5000, disableOnInteraction: false }}
-              loop={true}
-              spaceBetween={20}
-              slidesPerView={1}
-              className="rounded-xl"
-            >
-              {kiwifyProducts.map((product, index) => (
-                <SwiperSlide key={index}>
-                  <a
-                    href={product.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="block w-full h-72 overflow-hidden rounded-xl"
-                  >
-                    <img
-                      src={product.image}
-                      alt={product.name}
-                      className="w-full h-full object-cover transition duration-300 hover:opacity-90"
-                    />
-                  </a>
-                </SwiperSlide>
-              ))}
-            </Swiper>
+  modules={[Navigation, Autoplay]}
+  navigation
+  autoplay={{ delay: 5000, disableOnInteraction: false }}
+  loop={true}
+  spaceBetween={20}
+  slidesPerView={1}
+  breakpoints={{
+    768: { slidesPerView: 2 },
+    1024: { slidesPerView: 3 },
+  }}
+  className="rounded-xl"
+>
+  {kiwifyProducts.map((product) => (
+    <SwiperSlide key={product.id} className="h-auto">
+      <a
+        href={product.link}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="relative flex flex-col h-full bg-white border border-gray-200 rounded-2xl shadow-md hover:shadow-lg transform hover:scale-[1.02] transition-all duration-300 p-4"
+      >
+        {product.isNew && (
+          <span className="absolute top-2 left-2 bg-[#8A1C1C] text-white px-2 py-1 rounded text-xs shadow">
+            Novo
+          </span>
+        )}
+
+        {/* Imagem com altura fixa */}
+        <div className="w-full h-56 flex items-center justify-center overflow-hidden rounded-xl bg-white mb-4">
+          <img
+            src={product.image}
+            alt={product.title}
+            className="max-h-full object-contain"
+          />
+        </div>
+
+        {/* Conteúdo do card com flex-grow */}
+        <div className="flex flex-col justify-between flex-1">
+          <div>
+            <p className="text-lg font-bold text-[#2c2c2c]">{product.title}</p>
+            {product.coupon && (
+              <p className="text-sm text-gray-600">
+                Cupom: <span className="font-bold text-[#720c1e]">{product.coupon}</span>
+              </p>
+            )}
+            {product.description && (
+              <p className="text-sm text-gray-500 mt-1">{product.description}</p>
+            )}
+          </div>
+          <span className="mt-4 text-sm text-[#720c1e] font-semibold hover:underline self-start">
+            Ver mais
+          </span>
+        </div>
+      </a>
+    </SwiperSlide>
+  ))}
+</Swiper>
           </div>
         </div>
       </section>
@@ -78,7 +109,7 @@ type SocialCardProps = {
   icon: React.ReactNode;
   imageSrc: string;
   color: string;
-  orientation?: "horizontal" | "vertical"; // <- novo
+  orientation?: "horizontal" | "vertical";
 };
 
 const SocialCard: React.FC<SocialCardProps> = ({
@@ -88,7 +119,7 @@ const SocialCard: React.FC<SocialCardProps> = ({
   icon,
   imageSrc,
   color,
-  orientation = "horizontal", // <- padrão
+  orientation = "horizontal",
 }) => (
   <a
     href={href}
@@ -141,35 +172,58 @@ const socialCards: SocialCardProps[] = [
     icon: <i className="fa-brands fa-spotify text-green-600 text-xl" />,
     imageSrc: "/img/spotify.jpg",
     color: "#1DB954",
-    orientation: "vertical", // <- importante
+    orientation: "vertical",
   },
   {
     name: "TikTok",
-    handle: "@clinicapsidoamor",
-    href: "https://www.tiktok.com/@clinicapsidoamor",
+    handle: "@nataliadadaltopsi",
+    href: "https://www.tiktok.com/@nataliadadaltopsi",
     icon: <i className="fa-brands fa-tiktok text-black text-xl" />,
-    imageSrc: "/img/tiktok.png", // ajuste se o path for diferente
+    imageSrc: "https://p77-sign-va.tiktokcdn.com/tos-maliva-avt-0068/4188f5b0d03c2a7926b0aa6d2c08efda~tplv-tiktokx-cropcenter:1080:1080.jpeg?dr=14579&refresh_token=b0f6f8ae&x-expires=1747101600&x-signature=Sm9W84p%2FZSbTWUJ3Hc3YD4rbnY8%3D&t=4d5b0474&ps=13740610&shp=a5d48078&shcp=81f88b70&idc=maliva", // <- nova imagem
     color: "#000000",
-    orientation: "horizontal",
+    orientation: "vertical",
   },
 ];
 
 const kiwifyProducts = [
   {
-    name: "Curso 1",
-    image: "/img/infoproduto1.png",
-    href: "https://kiwify.com.br/produto1",
+    id: 1,
+    title: "E-Book: Relação Saudável Não é Sorte: É Técnica",
+    image: "/img/ebook.jpg",
+    link: "https://pay.kiwify.com.br/mN24Ugl",
+    isNew: true,
+    description: "Guia com técnicas baseadas em psicologia para relações melhores."
   },
   {
-    name: "Curso 2",
-    image: "/img/infoproduto2.png",
-    href: "https://kiwify.com.br/produto2",
+    id: 2,
+    title: "E-Book Completo: Criação de Conteúdo Engajado de Psicologia",
+    coupon: "PRIMEIRACOMPRA",
+    image: "/img/ebookInsta.jpg",
+    link: "https://pay.kiwify.com.br/45BIqPh",
+    description: "Aprenda a se destacar nas redes com conteúdo de valor."
   },
   {
-    name: "Curso 3",
-    image: "/img/infoproduto3.png",
-    href: "https://kiwify.com.br/produto3",
+    id: 3,
+    title: "Baralho: 100 Perguntas para mergulhar em autoconhecimento",
+    image: "/img/baralhoA.jpg",
+    link: "https://pay.kiwify.com.br/9bqkkdF",
+    description: "Ferramenta terapêutica para refletir e se conhecer melhor."
   },
+  {
+    id: 4,
+    title: "Baralho para Casais: 100 Perguntas para aprofundar a relação ❤️📩",
+    image: "/img/baralhoC.jpg",
+    link: "https://pay.kiwify.com.br/hCVMQAE",
+    description: "Construa mais conexão e comunicação com seu par."
+  },
+  {
+    id: 5,
+    title: "Curso Livre de Ciúmes",
+    image: "/img/curso_livreC.jpg",
+    link: "https://pay.kiwify.com.br/HmB8M9p",
+    description: "Transforme o ciúme em autoconfiança e segurança emocional."
+  }
 ];
 
 export default Contact;
+

@@ -1,12 +1,13 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { User, Users, HeartCrack, EyeOff, ArrowRight } from "lucide-react";
+import { User, Users, HeartCrack, ArrowRight } from "lucide-react";
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Autoplay, Pagination, Navigation } from 'swiper/modules';
+import { Autoplay, Pagination, Navigation } from 'swiper/modules'; // Navigation ainda é necessário para o carrossel principal
+
 import 'swiper/css';
-import 'swiper/css/navigation';
-import 'swiper/css/pagination';
-import 'swiper/css/autoplay';
+import 'swiper/css/navigation'; // Para o carrossel principal
+import 'swiper/css/pagination'; // Para o carrossel principal
+// 'swiper/css/autoplay' é geralmente coberto pela importação de 'swiper/css' e módulos
 
 import { Button } from "@/components/ui/button";
 import {
@@ -16,7 +17,48 @@ import {
   AccordionContent,
 } from "@/components/ui/accordion";
 
-// Carrossel de banners
+// Definição dos produtos Kiwify (copiada de Contact.tsx)
+const kiwifyProducts = [
+  {
+    id: 1,
+    title: "E-Book: Relação Saudável Não é Sorte: É Técnica",
+    image: "/img/ebook.jpg",
+    link: "https://pay.kiwify.com.br/mN24Ugl",
+    isNew: true,
+    description: "Guia com técnicas baseadas em psicologia para relações melhores."
+  },
+  {
+    id: 2,
+    title: "E-Book Completo: Criação de Conteúdo Engajado de Psicologia",
+    coupon: "PRIMEIRACOMPRA",
+    image: "/img/ebookInsta.jpg",
+    link: "https://pay.kiwify.com.br/45BIqPh",
+    description: "Aprenda a se destacar nas redes com conteúdo de valor."
+  },
+  {
+    id: 3,
+    title: "Baralho: 100 Perguntas para mergulhar em autoconhecimento",
+    image: "/img/baralhoA.jpg",
+    link: "https://pay.kiwify.com.br/9bqkkdF",
+    description: "Ferramenta terapêutica para refletir e se conhecer melhor."
+  },
+  {
+    id: 4,
+    title: "Baralho para Casais: 100 Perguntas para aprofundar a relação ❤️📩",
+    image: "/img/baralhoC.jpg",
+    link: "https://pay.kiwify.com.br/hCVMQAE",
+    description: "Construa mais conexão e comunicação com seu par."
+  },
+  {
+    id: 5,
+    title: "Curso Livre de Ciúmes",
+    image: "/img/curso_livreC.jpg",
+    link: "https://pay.kiwify.com.br/HmB8M9p",
+    description: "Transforme o ciúme em autoconfiança e segurança emocional."
+  }
+];
+
+// Carrossel de banners original da Index.tsx
 const bannerSlides = [
   {
     image: "/img/clinica_1.jpeg",
@@ -38,24 +80,19 @@ const bannerSlides = [
 const services = [
   {
     title: "Terapia Individual",
-    description: "Atendimento focado em você e suas necessidades.",
+    description: "Atendimento personalizado voltado para os desafios emocionais e de relacionamento. \nAnsiedade, autoestima, ciúmes, dependência emocional, términos, traição, dificuldades afetivas, entre outros.",
     icon: User,
   },
   {
     title: "Terapia de Casal",
-    description: "Fortalecimento de vínculos e comunicação afetiva.",
+    description: "Espaço para fortalecer vínculos e melhorar a comunicação no relacionamento.\nIdeal para casais que querem se reconectar, resolver conflitos ou se comunicar com mais empatia.",
     icon: Users,
   },
   {
-    title: "Dependência Emocional",
-    description: "Apoio para restaurar sua autonomia emocional.",
+    title: "Outros Serviços",
+    description: "Acolhimento para questões que vão além dos relacionamentos.\nTratamento para ansiedade, depressão, estresse, luto, transições de vida, entre outros desafios emocionais.",
     icon: HeartCrack,
-  },
-  {
-    title: "Ciúmes Excessivo",
-    description: "Compreensão e controle de comportamentos possessivos.",
-    icon: EyeOff,
-  },
+  }
 ];
 
 const testimonials = [
@@ -99,27 +136,102 @@ const Index: React.FC = () => {
   return (
     <div className="font-garet text-[#4C0B18] antialiased">
       
-      {/* Carrossel Hero */}
+      {/* Carrossel Hero Modificado */}
       <header className="bg-pink-50">
         <Swiper
-          modules={[Autoplay, Pagination, Navigation]}
-          autoplay={{ delay: 4000, disableOnInteraction: false }}
-          loop={true}
+          modules={[Autoplay, Pagination, Navigation]} // Navigation para o carrossel principal
+          autoplay={{ delay: 7000, disableOnInteraction: false }}
+          loop={true} 
           pagination={{ clickable: true }}
-          navigation={true}
-          className="w-full h-[180px] md:h-[600px]"
+          navigation={true} // Ativa navegação para o carrossel principal
+          className="w-full h-[300px] md:h-[600px]"
+          style={{
+            '--swiper-navigation-color': '#4C0B18', 
+            '--swiper-pagination-color': '#8A1C1C', 
+          } as React.CSSProperties}
         >
-          {bannerSlides.map((slide, index) => (
-            <SwiperSlide key={index}>
-              <a href={slide.link} target="_blank" rel="noopener noreferrer">
+          {/* Slide 1: Mantém a imagem original (primeiro item de bannerSlides) */}
+          {bannerSlides.length > 0 && (
+            <SwiperSlide key={`banner-${bannerSlides[0].alt}`}>
+              <a href={bannerSlides[0].link} target="_blank" rel="noopener noreferrer" className="block w-full h-full">
                 <img
-                src={slide.image}
-                alt={slide.alt}
-                className="w-full h-full object-cover md:object-cover object-contain"
-              />
+                  src={bannerSlides[0].image}
+                  alt={bannerSlides[0].alt}
+                  className="w-full h-full object-cover"
+                />
               </a>
             </SwiperSlide>
-          ))}
+          )}
+
+          {/* Slide 2: Produtos Kiwify */}
+          <SwiperSlide key="kiwify-products-slide" className="bg-[#F9F5F0] self-stretch">
+            <div className="container mx-auto px-2 py-6 md:py-10 h-full flex flex-col items-center justify-center">
+              <div className="flex items-center space-x-3 mb-4 md:mb-6">
+                <i className="fa-solid fa-graduation-cap text-purple-700 text-xl md:text-2xl" /> 
+                <h3 className="text-xl md:text-2xl font-semibold text-[#6B21A8]">Nossos Produtos Digitais</h3>
+              </div>
+              {kiwifyProducts.length > 0 ? (
+                <div className="w-full max-w-6xl px-4"> 
+                  <Swiper
+                    modules={[Autoplay]} // Removido Navigation daqui
+                    // navigation={false} // Ou remova a prop navigation completamente
+                    autoplay={{ delay: 4500, disableOnInteraction: false }}
+                    loop={kiwifyProducts.length > 3} 
+                    spaceBetween={20}
+                    slidesPerView={1}
+                    breakpoints={{
+                      640: { slidesPerView: 2, spaceBetween: 20 }, 
+                      1024: { slidesPerView: 3, spaceBetween: 30 },
+                    }}
+                    className="rounded-xl"
+                    // Estilos para navigation removidos daqui, pois não há mais setas
+                  >
+                    {kiwifyProducts.map((product) => (
+                      <SwiperSlide key={product.id} className="h-auto pb-8 self-stretch"> 
+                        <a
+                          href={product.link}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="relative flex flex-col h-full bg-white border border-gray-200 rounded-2xl shadow-md hover:shadow-lg transform hover:scale-[1.02] transition-all duration-300 p-4"
+                        >
+                          {product.isNew && (
+                            <span className="absolute top-2 left-2 bg-[#8A1C1C] text-white px-2 py-1 rounded text-xs shadow z-10">
+                              Novo
+                            </span>
+                          )}
+                          <div className="w-full h-40 sm:h-48 md:h-56 flex items-center justify-center overflow-hidden rounded-xl bg-gray-50 mb-3 md:mb-4">
+                            <img
+                              src={product.image}
+                              alt={product.title}
+                              className="max-h-full w-auto object-contain"
+                            />
+                          </div>
+                          <div className="flex flex-col justify-between flex-1">
+                            <div>
+                              <p className="text-base md:text-lg font-bold text-[#2c2c2c] leading-tight mb-1 line-clamp-2">{product.title}</p>
+                              {product.coupon && (
+                                <p className="text-xs md:text-sm text-gray-600">
+                                  Cupom: <span className="font-bold text-[#720c1e]">{product.coupon}</span>
+                                </p>
+                              )}
+                              {product.description && (
+                                <p className="text-xs md:text-sm text-gray-500 mt-1 line-clamp-3">{product.description}</p>
+                              )}
+                            </div>
+                            <span className="mt-3 md:mt-4 text-sm text-[#720c1e] font-semibold hover:underline self-start">
+                              Ver mais
+                            </span>
+                          </div>
+                        </a>
+                      </SwiperSlide>
+                    ))}
+                  </Swiper>
+                </div>
+              ) : (
+                <p className="text-center text-lg text-gray-600">Nenhum produto disponível no momento.</p>
+              )}
+            </div>
+          </SwiperSlide>
         </Swiper>
       </header>
 
@@ -154,7 +266,7 @@ const Index: React.FC = () => {
               },
               {
                 title: "Ambiente Acolhedor e Seguro",
-                desc: "Atendimento online com conforto e privacidade.",
+                desc: "Atendimento online com conforto, sigilo e privacidade.",
                 img: "/img/home_office.jpg",
                 alt: "Ambiente aconchegante",
               },
@@ -183,7 +295,7 @@ const Index: React.FC = () => {
         <section className="py-24 bg-white">
           <div className="container mx-auto px-6 text-center">
             <h2 className="text-4xl md:text-5xl font-bold mb-12">Nossos Serviços</h2>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
               {services.map(({ title, description, icon: Icon }, i) => (
                 <div
                   key={i}
@@ -195,7 +307,7 @@ const Index: React.FC = () => {
                       <Icon className="h-8 w-8" />
                     </div>
                     <h3 className="text-2xl font-semibold mb-2">{title}</h3>
-                    <p className="text-gray-600">{description}</p>
+                    <p className="text-gray-600 whitespace-pre-line">{description}</p>
                   </div>
                 </div>
               ))}

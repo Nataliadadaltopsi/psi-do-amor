@@ -13,7 +13,7 @@ const faqs = [
   },
   {
     question: "Com que frequência devo fazer terapia?",
-    answer: "A frequência ideal varia, mas muitas pessoas fazem sessões semanais.",
+    answer: "Temos 3 opções disponíveis: sessões avulsas, quinzenais e pacotes mensais (1 sessão por semana). É importante, especialmente no início do processo terapêutico, que se mantenha uma frequência, pois favorece o vínculo com a psicóloga e o aprofundamento nas questões trazidas. No entanto, a frequência pode variar de acordo com sua necessidade, objetivos e disponibilidade.",
   },
   {
     question: "Como sei se estou melhorando na terapia?",
@@ -21,27 +21,27 @@ const faqs = [
   },
   {
     question: "O que é falado na terapia é confidencial?",
-    answer: "Sim, a confidencialidade é um princípio fundamental da terapia.",
+    answer: "Sim. Tudo o que é compartilhado na terapia é protegido por sigilo profissional, conforme o Código de Ética da Psicologia. Isso significa que suas informações, histórias e emoções serão tratadas com respeito, sigilo e segurança. Este é um espaço seguro, pensado para que você possa se expressar livremente, sem julgamentos.",
   },
   {
-    question: "Como funciona o primeiro atendimento?",
-    answer: "No primeiro encontro, conversamos sobre suas necessidades, objetivos e apresentamos como o processo terapêutico funciona.",
-  },
-  {
-    question: "O primeiro atendimento já é cobrado ou é possível fazer uma sessão para conhecer e ver se me identifico?",
+    question: "O primeiro atendimento já é cobrado? Como funciona?",
     answer: "A primeira sessão já é um atendimento completo. Nela, já damos início ao tratamento. A psicóloga vai realizar perguntas importantes, identificar pontos principais da sua queixa e irá traçar os objetivos da terapia com base na psicologia.",
   },
   {
     question: "Diferença entre profissionais (valores):",
-    answer: "O valor das sessões varia conforme o tempo de experiência, especializações e disponibilidade de agenda de cada psicóloga. Todas são altamente capacitadas, mas algumas já têm mais bagagem clínica, o que também influencia no valor.Pode ter certeza que, independentemente da escolha, você estará em boas mãos",
+    answer: "O valor das sessões varia conforme o tempo de experiência, especializações e disponibilidade de agenda de cada psicóloga. Todas são altamente capacitadas, mas algumas já têm mais bagagem clínica, o que também influencia no valor. Pode ter certeza que, independentemente da escolha, você estará em boas mãos.",
   },
   {
     question: "Onde posso conhecer mais das profissionais?",
-    answer: "O instagram da clínica @clinicapsidoamor tem conteúdo diário com a participação delas (ou algo nesse sentido).",
+    answer: "Na aba 'sobre nós' você vai encontrar uma breve apresentação de cada uma de nossas profissionais, com a abordagem utilizada por ela, suas qualificações e um breve vídeo de apresentação. Além disso, o nosso instagram @clinicapsidoamor tem conteúdos gratuitos diários feitos pelas nossas psicólogas.",
   },
   {
     question: "O pagamento é feito antes ou depois da sessão?",
-    answer: " A reserva do horário é feita apenas mediante envio do comprovante de pagamento",
+    answer: "A reserva do horário é feita apenas mediante o envio do comprovante de pagamento, que deve sempre ser feito antes da sessão. Isso garante a organização da agenda e o comprometimento com o seu horário.",
+  },
+  {
+    question: "Como vou receber o link da sessão?",
+    answer: "A psicóloga escolhida por você entrará em contato no dia da sessão pela manhã com o link que será utilizado e novas informações.",
   },
   {
     question: "Aceitam plano de saúde?",

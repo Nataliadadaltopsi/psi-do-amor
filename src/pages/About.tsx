@@ -7,6 +7,7 @@ import JeniferImg from '/img/jenifer.jpeg';
 import KarolineImg from '/img/karoline.jpeg';
 import KissilaImg from '/img/kissila.jpeg';
 import MilenaImg from '/img/milena.jpeg';
+import LarissaImg from '/img/larissa.jpg';
 
 const team = [
   {
@@ -14,7 +15,7 @@ const team = [
     title: "Psicóloga – CRP 04/67504",
     approach: "Terapia Cognitivo-Comportamental",
     bio: [
-      "Formada em Psicologia – Univale",
+      "Graduada em Psicologia – Univale",
       "Orientação de Pais – INPI",
       "Pós-graduanda em Terapias Cognitivas e Contextuais para Casais – PUCPR",
     ],
@@ -24,12 +25,11 @@ const team = [
   {
     name: "Psi Jennifer Fontes",
     title: "Psicóloga Clínica – CRP 06/157897",
-    approach: "Terapia Cognitivo-Comportamental",
+    approach: "Análise do Comportamento",
     bio: [
       "Graduada em Psicologia – UNIP",
-      "Pós em Neuropsicologia – USJT",
-      "Especialização em Análise do Comportamento",
-      "Autora: 'Psicologia da Rejeição'",
+      "Pós-Graduada em Neuropsicologia – USJT",
+      "Autora: 'Psicologia da Rejeição'"
     ],
     image: JeniferImg,
     video: "https://www.w3schools.com/html/mov_bbb.mp4",
@@ -37,11 +37,10 @@ const team = [
   {
     name: "Psi Karoline Horts",
     title: "Psicóloga Clínica – CRP 16/09591",
-    approach: "Terapia Cognitivo-Comportamental",
+    approach: "Abordagem Centrada na Pessoa",
     bio: [
       "Graduada em Psicologia – UVV",
-      "Pós em Psicologia Humanista",
-      "Abordagem Centrada na Pessoa",
+      "Pós-Graduada em Psicologia Humanista"
     ],
     image: KarolineImg,
     video: "https://www.w3schools.com/html/mov_bbb.mp4",
@@ -49,12 +48,13 @@ const team = [
   {
     name: "Psi Marina Rezende",
     title: "Psicóloga Clínica – CRP 16/11048",
-    approach: "Terapia Cognitivo-Comportamental",
+    approach: "Psicologia Analítica",
     bio: [
       "Graduada em Psicologia – UVV",
       "Graduada em História – UFES",
       "Pós-graduanda em Psicologia Analítica",
       "Pós-graduanda em Psicopatologia",
+      "Autora: Alcateia Feminista - Curso Literário para Mulheres"
     ],
     image: MarinaImg,
     video: "https://www.w3schools.com/html/mov_bbb.mp4",
@@ -62,7 +62,7 @@ const team = [
   {
     name: "Psi Milena Rafaelle",
     title: "Psicóloga Clínica – CRP 06/193894",
-    approach: "Terapia Cognitivo-Comportamental",
+    approach: "Abordagem Centrada na Pessoa",
     bio: [
       "Graduada em Psicologia – Anhanguera",
       "Formação em Abordagem Centrada na Pessoa – OMNIA",
@@ -70,6 +70,17 @@ const team = [
     image: MilenaImg,
     video: "https://www.w3schools.com/html/mov_bbb.mp4",
   },
+  {
+    name: "Psi Larissa Abreu",
+    title: "Psicóloga Clínica – CRP 06/193894",
+    approach: "Terapia Cognitivo-Comportamental",
+    bio: [
+      "Graduada em Psicologia - EBMSP",
+      "Pós graduanda em Terapia Cognitivo-Comportamental",
+    ],
+    image: LarissaImg,
+    video: "https://www.w3schools.com/html/mov_bbb.mp4",
+  }
 ];
 
 const About: React.FC = () => {
