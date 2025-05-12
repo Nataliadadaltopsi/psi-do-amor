@@ -43,7 +43,7 @@ const team = [
       "Pós-Graduada em Psicologia Humanista"
     ],
     image: KarolineImg,
-    video: "https://www.w3schools.com/html/mov_bbb.mp4",
+    video: "/img/video_karoline.mov",
   },
   {
     name: "Psi Marina Rezende",
@@ -57,7 +57,7 @@ const team = [
       "Autora: Alcateia Feminista - Curso Literário para Mulheres"
     ],
     image: MarinaImg,
-    video: "https://www.w3schools.com/html/mov_bbb.mp4",
+    video: "/img/video_marina.mov",
   },
   {
     name: "Psi Milena Rafaelle",
@@ -79,7 +79,7 @@ const team = [
       "Pós graduanda em Terapia Cognitivo-Comportamental",
     ],
     image: LarissaImg,
-    video: "https://www.w3schools.com/html/mov_bbb.mp4",
+    video: "/img/video_larissa.mp4",
   }
 ];
 

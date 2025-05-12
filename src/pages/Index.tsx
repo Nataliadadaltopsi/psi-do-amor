@@ -64,17 +64,7 @@ const bannerSlides = [
     image: "/img/clinica_1.jpeg",
     alt: "Banner da Clínica",
     link: "https://psidoamor.com.br",
-  },
-  {
-    image: "/img/banner2.jpeg",
-    alt: "Podcast no Spotify",
-    link: "https://open.spotify.com/show/3Du0MDmFGJWU5mtQBhcDOH",
-  },
-  {
-    image: "/img/banner3.jpeg",
-    alt: "YouTube Psi do Amor",
-    link: "https://www.youtube.com/@NataliaDadaltopsi",
-  },
+  }
 ];
 
 const services = [
@@ -137,32 +127,38 @@ const Index: React.FC = () => {
     <div className="font-garet text-[#4C0B18] antialiased">
       
       {/* Carrossel Hero Modificado */}
-      <header className="bg-pink-50">
+      <header className="w-full aspect-video"> {/* 16:9 */}
         <Swiper
-          modules={[Autoplay, Pagination, Navigation]} // Navigation para o carrossel principal
+          modules={[Autoplay, Pagination, Navigation]}
           autoplay={{ delay: 7000, disableOnInteraction: false }}
-          loop={true} 
+          loop
           pagination={{ clickable: true }}
-          navigation={true} // Ativa navegação para o carrossel principal
-          className="w-full h-[300px] md:h-[600px]"
+          navigation
+          className="w-full h-full"
           style={{
-            '--swiper-navigation-color': '#4C0B18', 
-            '--swiper-pagination-color': '#8A1C1C', 
+            '--swiper-navigation-color': '#4C0B18',
+            '--swiper-pagination-color': '#8A1C1C',
           } as React.CSSProperties}
         >
-          {/* Slide 1: Mantém a imagem original (primeiro item de bannerSlides) */}
-          {bannerSlides.length > 0 && (
-            <SwiperSlide key={`banner-${bannerSlides[0].alt}`}>
-              <a href={bannerSlides[0].link} target="_blank" rel="noopener noreferrer" className="block w-full h-full">
-                <img
-                  src={bannerSlides[0].image}
-                  alt={bannerSlides[0].alt}
-                  className="w-full h-full object-cover"
-                />
+          {bannerSlides.map(b => (
+            <SwiperSlide key={b.alt}>
+              <a href={b.link} target="_blank" rel="noopener noreferrer">
+                <picture className="w-full h-full block">
+                  {/* só carrega no mobile até 640px de largura */}
+                  <source
+                    media="(max-width: 640px)"
+                    srcSet="/img/clinica_1Mobile.jpg"
+                  />
+                  {/* fallback para telas maiores */}
+                  <img
+                    src={b.image}
+                    alt={b.alt}
+                    className="w-full h-full object-cover"
+                  />
+                </picture>
               </a>
             </SwiperSlide>
-          )}
-
+          ))}
           {/* Slide 2: Produtos Kiwify */}
           <SwiperSlide key="kiwify-products-slide" className="bg-[#F9F5F0] self-stretch">
             <div className="container mx-auto px-2 py-6 md:py-10 h-full flex flex-col items-center justify-center">
