@@ -1,13 +1,15 @@
 import React from "react";
+// O Link já está importado
 import { Link } from "react-router-dom";
-import { User, Users, HeartCrack, ArrowRight } from "lucide-react";
+import { User, Users, HeartCrack, ArrowRight, CalendarCheck, ShoppingBag } from "lucide-react";
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Autoplay, Pagination, Navigation } from 'swiper/modules'; // Navigation ainda é necessário para o carrossel principal
+// Mantém apenas Navigation
+import { Navigation } from 'swiper/modules';
 
 import 'swiper/css';
-import 'swiper/css/navigation'; // Para o carrossel principal
-import 'swiper/css/pagination'; // Para o carrossel principal
-// 'swiper/css/autoplay' é geralmente coberto pela importação de 'swiper/css' e módulos
+// Remove a importação do CSS de autoplay
+// import 'swiper/css/autoplay'; // Linha removida
+import 'swiper/css/navigation'; // Mantém os estilos das setas
 
 import { Button } from "@/components/ui/button";
 import {
@@ -17,7 +19,7 @@ import {
   AccordionContent,
 } from "@/components/ui/accordion";
 
-// Definição dos produtos Kiwify (copiada de Contact.tsx)
+// Definição dos produtos Kiwify
 const kiwifyProducts = [
   {
     id: 1,
@@ -58,14 +60,15 @@ const kiwifyProducts = [
   }
 ];
 
-// Carrossel de banners original da Index.tsx
-const bannerSlides = [
-  {
-    image: "/img/clinica_1.jpeg",
-    alt: "Banner da Clínica",
-    link: "https://psidoamor.com.br",
-  }
-];
+// Dados para o banner estático
+const staticBanner = {
+  imageDesktop: "/img/clinica_1.jpeg",
+  imageMobile: "/img/clinica_1Mobile.jpg",
+  alt: "Banner da Clínica Psi do Amor",
+  // Substitua pelo seu link do WhatsApp!
+  whatsappLink: "https://wa.me/5527998865421?text=Ol%C3%A1%2C%20vim%20do%20site%20e%20quero%20agendar%20uma%20consulta"
+};
+
 
 const services = [
   {
@@ -118,118 +121,130 @@ const faq = [
   {
     question: "Como funciona a primeira sessão?",
     answer:
-      "É um momento de escuta e acolhimento, onde vamos entender suas necessidades e traçar o plano terapêutico.",
+    "É um momento de escuta e acolhimento, onde vamos entender suas necessidades e traçar o plano terapêutico.",
   },
 ];
 
 const Index: React.FC = () => {
   return (
     <div className="font-garet text-[#4C0B18] antialiased">
-      
-      {/* Carrossel Hero Modificado */}
-      <header className="w-full aspect-video"> {/* 16:9 */}
-        <Swiper
-          modules={[Autoplay, Pagination, Navigation]}
-          autoplay={{ delay: 7000, disableOnInteraction: false }}
-          loop
-          pagination={{ clickable: true }}
-          navigation
-          className="w-full h-full"
-          style={{
-            '--swiper-navigation-color': '#4C0B18',
-            '--swiper-pagination-color': '#8A1C1C',
-          } as React.CSSProperties}
+
+      {/* Header com Banner Estático - VERSÃO CORRIGIDA (100% funcional) */}
+      <header className="relative w-full h-auto min-h-[50vh] md:min-h-[60vh] bg-pink-50 group">
+        {/* Link principal cobrindo TODO o banner */}
+        <a
+          href={staticBanner.whatsappLink}
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Agendar consulta via WhatsApp"
+          className="absolute inset-0 z-0"
         >
-          {bannerSlides.map(b => (
-            <SwiperSlide key={b.alt}>
-              <a href={b.link} target="_blank" rel="noopener noreferrer">
-                <picture className="w-full h-full block">
-                  {/* só carrega no mobile até 640px de largura */}
-                  <source
-                    media="(max-width: 640px)"
-                    srcSet="/img/clinica_1Mobile.jpg"
-                  />
-                  {/* fallback para telas maiores */}
-                  <img
-                    src={b.image}
-                    alt={b.alt}
-                    className="w-full h-full object-cover"
-                  />
-                </picture>
-              </a>
-            </SwiperSlide>
-          ))}
-          {/* Slide 2: Produtos Kiwify */}
-          <SwiperSlide key="kiwify-products-slide" className="bg-[#F9F5F0] self-stretch">
-            <div className="container mx-auto px-2 py-6 md:py-10 h-full flex flex-col items-center justify-center">
-              <div className="flex items-center space-x-3 mb-4 md:mb-6">
-                <i className="fa-solid fa-graduation-cap text-purple-700 text-xl md:text-2xl" /> 
-                <h3 className="text-xl md:text-2xl font-semibold text-[#6B21A8]">Nossos Produtos Digitais</h3>
-              </div>
-              {kiwifyProducts.length > 0 ? (
-                <div className="w-full max-w-6xl px-4"> 
-                  <Swiper
-                    modules={[Autoplay]} // Removido Navigation daqui
-                    // navigation={false} // Ou remova a prop navigation completamente
-                    autoplay={{ delay: 4500, disableOnInteraction: false }}
-                    loop={kiwifyProducts.length > 3} 
-                    spaceBetween={20}
-                    slidesPerView={1}
-                    breakpoints={{
-                      640: { slidesPerView: 2, spaceBetween: 20 }, 
-                      1024: { slidesPerView: 3, spaceBetween: 30 },
-                    }}
-                    className="rounded-xl"
-                    // Estilos para navigation removidos daqui, pois não há mais setas
-                  >
-                    {kiwifyProducts.map((product) => (
-                      <SwiperSlide key={product.id} className="h-auto pb-8 self-stretch"> 
-                        <a
-                          href={product.link}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="relative flex flex-col h-full bg-white border border-gray-200 rounded-2xl shadow-md hover:shadow-lg transform hover:scale-[1.02] transition-all duration-300 p-4"
-                        >
-                          {product.isNew && (
-                            <span className="absolute top-2 left-2 bg-[#8A1C1C] text-white px-2 py-1 rounded text-xs shadow z-10">
-                              Novo
-                            </span>
-                          )}
-                          <div className="w-full h-40 sm:h-48 md:h-56 flex items-center justify-center overflow-hidden rounded-xl bg-gray-50 mb-3 md:mb-4">
-                            <img
-                              src={product.image}
-                              alt={product.title}
-                              className="max-h-full w-auto object-contain"
-                            />
-                          </div>
-                          <div className="flex flex-col justify-between flex-1">
-                            <div>
-                              <p className="text-base md:text-lg font-bold text-[#2c2c2c] leading-tight mb-1 line-clamp-2">{product.title}</p>
-                              {product.coupon && (
-                                <p className="text-xs md:text-sm text-gray-600">
-                                  Cupom: <span className="font-bold text-[#720c1e]">{product.coupon}</span>
-                                </p>
-                              )}
-                              {product.description && (
-                                <p className="text-xs md:text-sm text-gray-500 mt-1 line-clamp-3">{product.description}</p>
-                              )}
-                            </div>
-                            <span className="mt-3 md:mt-4 text-sm text-[#720c1e] font-semibold hover:underline self-start">
-                              Ver mais
-                            </span>
-                          </div>
-                        </a>
-                      </SwiperSlide>
-                    ))}
-                  </Swiper>
-                </div>
-              ) : (
-                <p className="text-center text-lg text-gray-600">Nenhum produto disponível no momento.</p>
-              )}
-            </div>
-          </SwiperSlide>
-        </Swiper>
+          {/* Imagem responsiva corrigida */}
+          <picture className="w-full h-full">
+            <source 
+              srcSet={staticBanner.imageMobile} 
+              media="(max-width: 640px)" 
+              className="w-full h-full object-cover"
+            />
+            <img
+              src={staticBanner.imageDesktop}
+              alt={staticBanner.alt}
+              className="w-full h-full object-cover"
+              loading="eager"
+            />
+          </picture>
+        </a>
+
+        {/* Botão de Agendamento (posicionamento absoluto mantido) */}
+        <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+          <a
+            href={staticBanner.whatsappLink}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="absolute left-1/2 top-[60%] md:top-1/2 transform -translate-x-1/2 -translate-y-1/2 inline-flex items-center justify-center px-6 py-3 md:px-8 md:py-4 bg-[#8A1C1C] text-white text-lg md:text-xl font-semibold rounded-xl shadow-lg hover:bg-[#4C0B18] transition-all duration-300 group-hover:scale-105 focus:outline-none focus:ring-2 focus:ring-[#8A1C1C] focus:ring-offset-2 focus:ring-offset-pink-50 pointer-events-auto z-10"
+            style={{ textShadow: '1px 1px 2px rgba(0,0,0,0.3)' }}
+          >
+            <CalendarCheck className="mr-2 h-5 w-5 md:h-6 md:w-6" />
+            Agendar Consulta
+          </a>
+        </div>
       </header>
+
+      {/* Seção de Produtos Kiwify */}
+      {kiwifyProducts.length > 0 && (
+        <section className="py-16 md:py-24 bg-[#F9F5F0]">
+          <div className="container mx-auto px-4">
+            <div className="flex flex-col items-center text-center mb-10 md:mb-12">
+              <ShoppingBag className="h-10 w-10 text-purple-700 mb-3" />
+              {/* Tornar o título um Link */}
+              <Link
+                to="/infoprodutos" // Define o destino do link
+                // Aplica as classes de estilização do título ao Link e adiciona efeito hover
+                className="text-3xl md:text-4xl font-bold text-[#6B21A8] hover:underline focus:outline-none focus:underline"
+              >
+                Nossos Infoprodutos
+              </Link>
+              <p className="mt-2 text-md md:text-lg text-gray-600 max-w-xl">
+                Explore nossos materiais exclusivos para seu desenvolvimento pessoal e profissional.
+              </p>
+            </div>
+            <div className="w-full max-w-6xl mx-auto relative">
+              <Swiper
+                modules={[Navigation]} // Use apenas Navigation
+                loop={kiwifyProducts.length > 3}
+                spaceBetween={20}
+                slidesPerView={1}
+                breakpoints={{
+                  640: { slidesPerView: 2, spaceBetween: 20 },
+                  1024: { slidesPerView: 3, spaceBetween: 30 },
+                }}
+                className="rounded-xl"
+                navigation={true} // Mantém a navegação pelas setas
+              >
+                {kiwifyProducts.map((product) => (
+                  <SwiperSlide key={product.id} className="h-auto pb-8 self-stretch">
+                    <a
+                      href={product.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="relative flex flex-col h-full bg-white border border-gray-200 rounded-2xl shadow-md hover:shadow-lg transform hover:scale-[1.02] transition-all duration-300 p-4"
+                    >
+                      {product.isNew && (
+                        <span className="absolute top-2 left-2 bg-[#8A1C1C] text-white px-2 py-1 rounded text-xs shadow z-10">
+                          Novo
+                        </span>
+                      )}
+                      <div className="w-full h-40 sm:h-48 md:h-56 flex items-center justify-center overflow-hidden rounded-xl bg-gray-50 mb-3 md:mb-4">
+                        <img
+                          src={product.image}
+                          alt={product.title}
+                          className="max-h-full w-auto object-contain"
+                        />
+                      </div>
+                      <div className="flex flex-col justify-between flex-1">
+                        <div>
+                          <p className="text-base md:text-lg font-bold text-[#2c2c2c] leading-tight mb-1 line-clamp-2">{product.title}</p>
+                          {product.coupon && (
+                            <p className="text-xs md:text-sm text-gray-600">
+                              Cupom: <span className="font-bold text-[#720c1e]">{product.coupon}</span>
+                            </p>
+                          )}
+                          {product.description && (
+                            <p className="text-xs md:text-sm text-gray-500 mt-1 line-clamp-3">{product.description}</p>
+                          )}
+                        </div>
+                        <span className="mt-3 md:mt-4 text-sm text-[#720c1e] font-semibold hover:underline self-start">
+                          Ver mais
+                        </span>
+                      </div>
+                    </a>
+                  </SwiperSlide>
+                ))}
+              </Swiper>
+            </div>
+          </div>
+        </section>
+      )}
 
       <main>
         {/* NOSSA MISSÃO */}
@@ -358,21 +373,25 @@ const Index: React.FC = () => {
 
         {/* FAQ */}
         <section id="faq" className="py-24 bg-gradient-to-t from-pink-50 to-white">
-          <div className="container mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
-            <div className="sticky top-24 self-start space-y-4">
+          <div className="container mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-x-12 gap-y-8 items-start">
+            {/* Bloco de Título e Descrição do FAQ */}
+            <div className="lg:sticky lg:top-24 self-start space-y-4 text-center lg:text-left">
               <h2 className="text-4xl md:text-5xl font-bold">Perguntas Frequentes</h2>
               <p className="text-lg text-gray-700">
                 Aqui respondemos às principais dúvidas para que você se sinta ainda mais acolhido.
               </p>
             </div>
+            {/* Bloco do Accordion */}
             <div>
               <Accordion type="single" collapsible className="space-y-4">
                 {faq.map(({ question, answer }, idx) => (
                   <AccordionItem key={idx} value={`faq-${idx}`} className="border-b border-gray-200">
-                    <AccordionTrigger className="py-4 text-lg font-medium text-[#4C0B18]">
+                    <AccordionTrigger className="py-4 text-lg font-medium text-[#4C0B18] text-left hover:no-underline">
                       {question}
                     </AccordionTrigger>
-                    <AccordionContent className="pb-4 text-gray-700">{answer}</AccordionContent>
+                    <AccordionContent className="pb-4 text-gray-700 text-left">
+                      {answer}
+                    </AccordionContent>
                   </AccordionItem>
                 ))}
               </Accordion>
