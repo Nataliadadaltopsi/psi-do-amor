@@ -14,8 +14,16 @@ const Navbar = () => {
     <nav className="bg-white shadow-md fixed w-full z-50">
       <div className="container mx-auto px-4">
         <div className="flex justify-between items-center h-16">
-          <Link to="/" className="flex items-center" onClick={scrollToTop}>
-            <img src="/img/logo1_rb.png" alt="Psi do Amor" className="h-20" />
+         <Link 
+              to="https://wa.me/5527998865421?text=Ol%C3%A1%2C%20vim%20do%20site%20e%20quero%20agendar%20uma%20consulta" 
+              onClick={(e) => {
+                e.preventDefault();
+                window.open(e.currentTarget.href, '_blank', 'noopener,noreferrer');
+                scrollToTop();
+              }}
+              className="flex items-center"
+            >
+              <img src="/img/logo1_rb.png" alt="Psi do Amor" className="h-20" />
           </Link>
 
           {/* Mobile menu button */}
@@ -29,7 +37,7 @@ const Navbar = () => {
           {/* Desktop menu */}
           <div className="hidden md:flex space-x-8">
             <Link to="/" className="text-gray-700 hover:text-burgundy" onClick={scrollToTop}>Início</Link>
-            <Link to="/sobre" className="text-gray-700 hover:text-burgundy" onClick={scrollToTop}>Sobre Nós</Link>
+            <Link to="/sobre" className="text-gray-700 hover:text-burgundy" onClick={scrollToTop}>Equipe</Link>
             <Link to="/servicos" className="text-gray-700 hover:text-burgundy" onClick={scrollToTop}>Serviços</Link>
             <Link to="/faq" className="text-gray-700 hover:text-burgundy" onClick={scrollToTop}>Perguntas Frequentes</Link>
             <Link to="/infoprodutos" className="text-gray-700 hover:text-burgundy" onClick={scrollToTop}>Infoprodutos</Link>

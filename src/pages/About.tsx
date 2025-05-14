@@ -35,7 +35,7 @@ const team = [
     video: "https://www.w3schools.com/html/mov_bbb.mp4",
   },
   {
-    name: "Psi Karoline Horts",
+    name: "Psi Karoline Horsts",
     title: "Psicóloga Clínica – CRP 16/09591",
     approach: "Abordagem Centrada na Pessoa",
     bio: [
@@ -72,7 +72,7 @@ const team = [
   },
   {
     name: "Psi Larissa Abreu",
-    title: "Psicóloga Clínica – CRP 06/193894",
+    title: "Psicóloga Clínica – CRP 03/29860",
     approach: "Terapia Cognitivo-Comportamental",
     bio: [
       "Graduada em Psicologia - EBMSP",
