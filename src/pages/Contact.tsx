@@ -179,7 +179,7 @@ const socialCards: SocialCardProps[] = [
     handle: "@nataliadadaltopsi",
     href: "https://www.tiktok.com/@nataliadadaltopsi",
     icon: <i className="fa-brands fa-tiktok text-black text-xl" />,
-    imageSrc: "https://p77-sign-va.tiktokcdn.com/tos-maliva-avt-0068/4188f5b0d03c2a7926b0aa6d2c08efda~tplv-tiktokx-cropcenter:1080:1080.jpeg?dr=14579&refresh_token=b0f6f8ae&x-expires=1747101600&x-signature=Sm9W84p%2FZSbTWUJ3Hc3YD4rbnY8%3D&t=4d5b0474&ps=13740610&shp=a5d48078&shcp=81f88b70&idc=maliva", // <- nova imagem
+    imageSrc: "/img/tiktok.jpeg",
     color: "#000000",
     orientation: "vertical",
   },

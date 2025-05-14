@@ -55,7 +55,7 @@ const Navbar = () => {
         <div className={`md:hidden ${isOpen ? 'block' : 'hidden'} pb-4`}>
           <div className="flex flex-col items-center space-y-2 text-center">
             <Link to="/" className="text-gray-700 hover:text-burgundy p-2" onClick={scrollToTop}>Início</Link>
-            <Link to="/sobre" className="text-gray-700 hover:text-burgundy p-2" onClick={scrollToTop}>Sobre Nós</Link>
+            <Link to="/sobre" className="text-gray-700 hover:text-burgundy p-2" onClick={scrollToTop}>Equipe</Link>
             <Link to="/servicos" className="text-gray-700 hover:text-burgundy p-2" onClick={scrollToTop}>Serviços</Link>
             <Link to="/faq" className="text-gray-700 hover:text-burgundy p-2" onClick={scrollToTop}>FAQ</Link>
             <Link to="/infoprodutos" className="text-gray-700 hover:text-burgundy p-2" onClick={scrollToTop}>Infoprodutos</Link>
