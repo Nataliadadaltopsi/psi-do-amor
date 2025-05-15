@@ -20,7 +20,7 @@ const team = [
       "Pós-graduanda em Terapias Cognitivas e Contextuais para Casais – PUCPR",
     ],
     image: KissilaImg,
-    video: "https://www.w3schools.com/html/mov_bbb.mp4",
+    video: "/img/video_kissila.mp4",
   },
   {
     name: "Psi Jennifer Fontes",
@@ -32,7 +32,7 @@ const team = [
       "Autora: 'Psicologia da Rejeição'"
     ],
     image: JeniferImg,
-    video: "https://www.w3schools.com/html/mov_bbb.mp4",
+    video: "/img/video_jennifer.mp4",
   },
   {
     name: "Psi Karoline Horsts",
@@ -68,7 +68,7 @@ const team = [
       "Formação em Abordagem Centrada na Pessoa – OMNIA",
     ],
     image: MilenaImg,
-    video: "https://www.w3schools.com/html/mov_bbb.mp4",
+    video: "/img/video_milena.mp4",
   },
   {
     name: "Psi Larissa Abreu",
