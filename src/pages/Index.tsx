@@ -90,19 +90,19 @@ const services = [
 
 const testimonials = [
   {
-    text: "Gostei muito! Me senti acolhida com sensibilidade e qualificação!!",
+    image: "/img/depoimento3.jpg",
     author: "Paciente da Psi do Amor",
   },
   {
-    text: "Encontrei apoio e orientação para superar um momento difícil. Fui muito bem acolhida, amei!",
+    image: "/img/depoimento1.jpg",
     author: "Paciente da Psi do Amor",
   },
   {
-    text: "Oie boa tarde!! Eu me senti muito bem e acolhida, e gostei muito da clinica!",
+    image: "/img/depoimento4.jpg",
     author: "Paciente da Psi do Amor",
   },
   {
-    text: "Aqui me senti ouvida de verdade. Foi ótimo, me senti muito melhor!",
+    image: "/img/depoimento2.jpg",
     author: "Paciente da Psi do Amor",
   },
 ];
@@ -338,19 +338,27 @@ const Index: React.FC = () => {
 
         {/* DEPOIMENTOS */}
         <section className="py-24 bg-gradient-to-r from-pink-50 to-white">
-          <div className="container mx-auto px-6">
-            <h2 className="text-4xl md:text-5xl font-bold text-center text-[#4C0B18]">
+          <div className="container mx-auto px-6 text-center max-w-screen-2xl">
+            <h2 className="text-4xl md:text-5xl font-bold text-[#4C0B18]">
               Depoimentos
             </h2>
-            <div className="hidden md:grid md:grid-cols-4 md:gap-8 mt-12">
+
+            <div className="hidden md:grid grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 gap-8 mt-12">
               {testimonials.slice(0, 4).map((t, idx) => (
-                <div
-                  key={idx}
-                  className="p-8 rounded-2xl shadow-lg bg-white flex flex-col justify-between"
-                >
-                  <span className="block text-2xl leading-none mb-4 text-[#8A1C1C]">“</span>
-                  <p className="flex-grow text-lg text-gray-800 mb-6">{t.text}</p>
-                  <span className="text-sm font-semibold text-[#4C0B18]">{t.author}</span>
+              <div
+                key={idx}
+                className="group relative bg-white p-6 rounded-3xl shadow-lg
+                           transition-shadow duration-300 hover:shadow-2xl
+                           flex items-center justify-center
+                           h-96  /* ← altura fixa de 20rem */
+                           max-h-[24rem]  /* opcional: limita pra não estourar */
+                          "
+              >
+                  <img
+                    src={t.image}
+                    alt={`Depoimento de ${t.author}`}
+                    className="max-h-full w-auto object-contain"
+                  />
                 </div>
               ))}
             </div>
@@ -361,9 +369,13 @@ const Index: React.FC = () => {
                     key={i}
                     className="flex-shrink-0 w-64 h-80 p-6 rounded-2xl shadow-lg bg-white flex flex-col justify-between"
                   >
-                    <span className="block text-2xl leading-none mb-2 text-[#8A1C1C]">“</span>
-                    <p className="flex-grow text-base text-gray-800 mb-4">{t.text}</p>
-                    <span className="text-xs font-medium text-[#4C0B18]">{t.author}</span>
+                    <div className="flex-1 flex items-center justify-center mb-4 h-96">
+                      <img
+                        src={t.image}
+                        alt={`Depoimento de ${t.author}`}
+                        className="h-full object-contain"
+                      />
+                    </div>
                   </div>
                 ))}
               </div>
